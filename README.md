@@ -7,23 +7,26 @@ Designed to provide a simple implementation of a CSRF protection in a PHP projec
 
 # Usage
 
-Instantiate the class:
 ```php
+	<?php
+	//Instantiate the class
 	require_once("SimpleCSRFGuard.class.php");
 	$csrfGuard = new SimpleCSRFGuard();
-```
-Use this method to generate a CSRF token linked to the user's session:
-```php
+
+	//Generate a CSRF token linked to the user's session
 	$csrfGuard->generateToken();
-```
-Use this method to validate a CSRF token:
-```php
+
+	//validate a CSRF token
 	$csrfGuard->validateToken($tokenToValidate);
 ```
+
 The session parameter name and the maximium of stored tokens can be modified when the class is instantiated:
+
 ```php
+	<?php
 	$csrfGuard = new SimpleCSRFGuard("session_parameter_name", max_tokens);
 ```
+
 For a simple example of implementation, please check the "example.php" file.
 
 # Licence
