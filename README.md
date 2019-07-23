@@ -24,7 +24,7 @@ The session parameter name and the maximium of stored tokens can be modified whe
 
 ```php
 <?php
-$csrfGuard = new SimpleCSRFGuard("session_parameter_name", max_tokens);
+$csrfGuard = new SimpleCSRFGuard("token_parameter_name", max_tokens);
 ```
 
 For a simple example of implementation, please check the "example.php" file.
