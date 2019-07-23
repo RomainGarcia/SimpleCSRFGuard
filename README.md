@@ -16,7 +16,7 @@ $csrfGuard = new SimpleCSRFGuard();
 //Generate a CSRF token linked to the user's session
 $csrfGuard->generateToken();
 
-//Calidate a CSRF token
+//Validate a CSRF token
 $csrfGuard->validateToken($tokenToValidate);
 ```
 
