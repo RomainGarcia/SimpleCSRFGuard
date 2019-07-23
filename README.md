@@ -16,7 +16,7 @@ $csrfGuard = new SimpleCSRFGuard();
 //Generate a CSRF token linked to the user's session
 $csrfGuard->generateToken();
 
-//validate a CSRF token
+//Calidate a CSRF token
 $csrfGuard->validateToken($tokenToValidate);
 ```
 
@@ -33,7 +33,7 @@ For a simple example of implementation, please check the "example.php" file.
 
 Author:	Romain Garcia
 
-Copyright 2018, Romain Garcia
+Copyright 2019, Romain Garcia
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
