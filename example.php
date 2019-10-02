@@ -3,8 +3,8 @@
 	require_once("SimpleCSRFGuard.class.php");
 	$csrfGuard = new SimpleCSRFGuard();
 	$message = "Please enter your name in the field above.";
-	if (isset($_POST["_csrf_token"])) {
-		$message = $csrfGuard->validateToken($_POST["_csrf_token"]) ? "The CSRF token is valid." : "The CSRF token is invalid.";
+	if (isset($_POST[$csrfGuard->getTokenName()])) {
+		$message = $csrfGuard->validateToken($_POST[$csrfGuard->getTokenName()]) ? "The CSRF token is valid." : "The CSRF token is invalid.";
 	}
 ?>
 
@@ -18,11 +18,11 @@
 		<h1>CSRF implementation example</h1>
 		<form class="" action="" method="post">
 			<input type="text" name="name" value="">
-			<input type="hidden" name="_csrf_token" value="<?php echo $csrfGuard->generateToken(); ?>">
+			<input type="hidden" name="<?= $csrfGuard->getTokenName() ?>" value="<?= $csrfGuard->generateToken() ?>">
 			<button type="submit" name="button">GO</button>
 		</form>
 		<div class="">
-			<?php echo $message; ?>
+			<?= $message ?>
 		</div>
 	</body>
 </html>
